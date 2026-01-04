@@ -2,8 +2,8 @@ require_relative "boot"
 
 require "rails"
 # Pick the frameworks you want:
-require "active_model/railtie"
-require "active_job/railtie"
+# require "active_model/railtie"
+# require "active_job/railtie"
 # require "active_record/railtie"
 # require "active_storage/engine"
 require "action_controller/railtie"
@@ -13,7 +13,7 @@ require "action_mailer/railtie"
 require "action_view/railtie"
 require "action_cable/engine"
 require "rails/test_unit/railtie"
-
+require "turbo-rails"
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
@@ -37,5 +37,9 @@ module Dummy
     #
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
+    config.view_component.component_parent_class = "DesignKeeper::ApplicationComponent"
+    config.lookbook.preview_paths << DesignKeeper::Engine.root.join("test/components/previews")
+    config.view_component.instrumentation_enabled = true
+    config.view_component.preview = true
   end
 end

@@ -23,4 +23,10 @@ Gem::Specification.new do |spec|
   end
 
   spec.add_dependency "rails", ">= 8.1.1"
+  spec.add_dependency "lookbook", "~> 2.3"
+  spec.add_dependency "tailwindcss-rails", ">= 4.0"
+  spec.add_dependency "view_component", "~> 4.1"
+  spec.add_dependency "importmap-rails", "~> 2.2"
+  spec.add_dependency "turbo-rails", "~> 2.0"
+  spec.add_dependency "stimulus-rails", "~> 1.3"
 end

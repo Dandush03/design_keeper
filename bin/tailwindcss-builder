@@ -1,0 +1,5 @@
+$(bundle show tailwindcss-ruby)/exe/tailwindcss \
+  -i $(bundle show design_keeper)/app/assets/tailwind/design_keeper/engine.css \
+  -o $(bundle show design_keeper)/test/dummy/app/assets/builds/tailwind.css \
+  --minify \
+  -w
