@@ -47,6 +47,13 @@ module DesignKeeper
         JS
       end
 
+      def add_css_import_to_tailwind_file
+        file = File.exist?("app/assets/tailwind/application.tailwind.css") ? "app/assets/tailwind/application.tailwind.css" : "app/assets/tailwind/application.css"
+        append_to_file file, <<~CSS
+          @import "../builds/tailwind/design_keeper.css";
+        CSS
+      end
+
       def notice
         say "\nDesignKeeper installed.", :green
         say "\nEnsure javascript_importmap_tags are included in your layout", :yellow
