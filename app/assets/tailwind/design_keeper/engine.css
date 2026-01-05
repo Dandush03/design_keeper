@@ -8,3 +8,9 @@
   If we ever want to remove these styles we need to add an explicit border
   color utility to any element that depends on these defaults.
 */
+
+@layer components {
+  .design-keeper-card {
+    @apply border-gray-200 bg-red-700 p-2;
+  }
+}
