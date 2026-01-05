@@ -43,7 +43,7 @@ module DesignKeeper
 
       def add_js_import
         append_to_file "app/javascript/application.js", <<~JS
-          import "design_keeper"
+          import "design_keeper/application"
         JS
       end
 
@@ -52,6 +52,10 @@ module DesignKeeper
         append_to_file file, <<~CSS
           @import "../builds/tailwind/design_keeper.css";
         CSS
+      end
+
+      def run_tailwind_engine_command
+        run "bin/rails tailwindcss:engines"
       end
 
       def notice

@@ -20,8 +20,19 @@ Add following to your `app/assets/tailwind/application.css` after `@import "tail
 @import "../builds/tailwind/design_keeper.css";
 ```
 
-Add following to your `app/javascript/controllers/index.js` after `eagerLoadControllersFrom("controllers", application)` line:
-
+Add following to your `app/javascript/application.js` at the top of the file:
 ```javascript
-eagerLoadControllersFrom("design_keeper", application)
+  import "design_keeper/application"
 ```
+
+If you want to be able to preview components in isolation, mount the DesignKeeper engine in your `config/routes.rb`:
+```ruby
+  mount DesignKeeper::Engine, at: "/design_keeper"
+```
+
+and include to your application configuration in `config/application.rb` or in an environment specific file like `config/environments/development.rb`:
+```ruby
+  config.lookbook.preview_paths << DesignKeeper::Engine.root.join("test/components/previews")
+```
+
+Don't forget that this library requires importmaps, Turbo, Stimulus, and Tailwind to be setup in your project. Including and not less important the Tailwind Engines support and the `javascript_importmap_tags` in your layout.
