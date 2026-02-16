@@ -20,7 +20,7 @@ gem "tailwindcss-rails", "~> 4.0"
 gem "lookbook", "~> 2.3"
 
 # View component library for building reusable, testable & encapsulated view components [https://viewcomponent.org/]
-gem "view_component", "~> 4.1"
+gem "view_component", "~> 4.4"
 
 # Use JavaScript with ESM import maps [https://github.com/rails/importmap-rails]
 gem "importmap-rails", "~> 2.2"
